@@ -37,7 +37,7 @@ Credits / Sources
 
 A big thanks to the hard work of all the people who have created the following sources that have been used. Other sources will be credited as the original sources are found.
 
-normalize.css : 			https://github.com/necolas/normalize.css
-Reset : 					http://meyerweb.com/eric/tools/css/reset/
-rem mixin :					unknown - source needed
-bulletproof clearfix :	 	https://github.com/adamstac/grid-coordinates/blob/master/stylesheets/modules/_bulletproof-clearfix.sass
+- normalize.css : 			https://github.com/necolas/normalize.css
+- Reset : 					http://meyerweb.com/eric/tools/css/reset/
+- rem mixin :					unknown - source needed
+- bulletproof clearfix :	 	https://github.com/adamstac/grid-coordinates/blob/master/stylesheets/modules/_bulletproof-clearfix.sass

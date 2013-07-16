@@ -25,9 +25,9 @@ Import into your scss file as you normally would
 
 File: style.scss
 
-@import 'extended_normalize.scss'; // Extended version of normalize.css
-@import 'utils.scss';
-@include basicPositioningClasses;
+    @import 'extended_normalize.scss'; // Extended version of normalize.css
+    @import 'utils.scss';
+    @include basicPositioningClasses;
 
 
 

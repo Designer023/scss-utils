@@ -1,0 +1,26 @@
+//REQUIRES normalise.scss (or normalise.css renamed as .scss)
+@import 'normalize.scss';
+
+/* ==========================================================================
+   Extended 'resets' for the elements normalize.css doesn't include
+   ========================================================================== */
+
+
+/**
+ * Remove styling from lists
+ */
+
+ul,
+ol {
+	list-style-type: none;
+	margin:0;
+	padding:0;
+}
+
+/**
+ * Remove underline from links
+ */
+
+a {
+	text-decoration: none;
+}

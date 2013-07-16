@@ -1,0 +1,72 @@
+// ==== USEFUL SASS MIXINS for easy project use ====
+
+
+@mixin bulletproof-clearfix {
+  // Creates a clearfix style
+  // Usage: @inclue bulletproof-clearfix;
+  zoom: 1;
+  &:before, &:after {
+    content: ".";
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    font-size: 0;
+    line-height: 0;
+    width: 0;
+    height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+@mixin rem($property, $px_values) {
+  // Changes property values into rems and px (fallback for ie) using px values 
+  // Usage: @inclue rem(font-size, 20px);
+  $baseline_rem: $baseline_px / 1rem;
+  #{$property}: $px_values;
+  @if type-of($px_values) == "number" {
+    #{$property}: $px_values / $baseline_rem;
+  }
+  @else {
+    $rem_values: ();
+    @each $value in $px_values {
+      @if $value == 0 {
+        $rem_values: append($rem_values, $value);
+      }
+      @else {
+        $rem_values: append($rem_values, $value / $baseline_rem);
+      }
+    }
+    #{$property}: $rem_values;
+  }
+}
+
+
+// A range of breakpoin mixins min, max and range
+@mixin breakpointMin($bp) {
+    @media screen and (min-width: $bp) { @content; }
+}
+
+@mixin breakpointMax($bp) {
+    @media screen and (max-width: $bp) { @content; }
+}
+
+@mixin breakpointRange($startPoint, $endPoint) {
+    @media screen and (min-width: $startPoint) and (max-width: $endPoint) { @content; }
+}
+
+
+
+
+@mixin basicPositioningClasses() {
+    // Quick setup for some common positioning classes 
+    // Usage: @include basicPositioningClasses;
+    .cf { @include bulletproof-clearfix; };
+    .left { float: left; }
+    .right { float: right; }
+
+    .relative { position: relative; }
+    .absolute { position: absolute; }
+}

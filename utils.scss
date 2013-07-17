@@ -21,6 +21,12 @@
 }
 
 
+@mixin font-size($font-size){
+    font-size:$font-size +px;
+    font-size:$font-size / $baseline_px +rem;
+}
+
+
 @mixin rem($property, $px_values) {
   // Changes property values into rems and px (fallback for ie) using px values 
   // Usage: @inclue rem(font-size, 20px);

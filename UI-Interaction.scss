@@ -1,0 +1,51 @@
+@mixin clickyButton($duration : 0.3s, $height: 10px, $height--hover: 7px, $height--active: 3px, $shadow : true) {
+	
+	$offset--hover : $height - $height--hover;
+	$offset--active : $height - $height--active;
+
+	//transitions
+	-webkit-transition: all $duration ease;
+	-moz-transition: all $duration ease;
+	-ms-transition: all $duration ease;
+	-o-transition: all $duration ease;
+	transition: all $duration ease;
+
+	@if ($shadow == true) {
+		-webkit-box-shadow: 0px $height 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+	    -moz-box-shadow: 0px $height 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+	    box-shadow: 0px $height 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+	} @else {
+		-webkit-box-shadow: 0px $height 0px rgba(219,31,5,1);
+	    -moz-box-shadow: 0px $height 0px rgba(219,31,5,1);
+	    box-shadow: 0px $height 0px rgba(219,31,5,1);
+	}
+
+	&:hover {
+		@if ($shadow == true) {
+			-webkit-box-shadow: 0px $height--hover 0px rgba(219,31,5,1), 0px 6px 6px rgba(0,0,0,.9);
+		    -moz-box-shadow: 0px $height--hover 0px rgba(219,31,5,1), 0px 6px 6px rgba(0,0,0,.9);
+		    box-shadow: 0px $height--hover 0px rgba(219,31,5,1), 0px 6px 6px rgba(0,0,0,.9);
+	    } @else {
+			-webkit-box-shadow: 0px $height--hover 0px rgba(219,31,5,1);
+		    -moz-box-shadow: 0px $height--hover 0px rgba(219,31,5,1);
+		    box-shadow: 0px $height--hover 0px rgba(219,31,5,1);
+		}
+	    position: relative;
+	    top: $offset--hover;
+	}
+
+	&:active {
+		@if ($shadow == true) {
+    	-webkit-box-shadow: 0px $height--active 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+	    -moz-box-shadow: 0px $height--active 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+	    box-shadow: 0px $height--active 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+		} @else {
+		-webkit-box-shadow: 0px $height--active 0px rgba(219,31,5,1);
+	    -moz-box-shadow: 0px $height--active 0px rgba(219,31,5,1);
+	    box-shadow: 0px $height--active 0px rgba(219,31,5,1);
+		}	
+		
+	    position: relative;
+	    top: $offset--active;
+	}
+}

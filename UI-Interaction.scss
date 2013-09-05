@@ -1,4 +1,5 @@
 @mixin clickyButton($duration : 0.3s, $height: 10px, $height--hover: 7px, $height--active: 3px, $shadow : true) {
+//USAGE: @include clickyButton(0.2s, 8px, 6px, 2px, false);
 	
 	$offset--hover : $height - $height--hover;
 	$offset--active : $height - $height--active;

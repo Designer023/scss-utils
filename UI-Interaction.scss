@@ -1,6 +1,6 @@
-@mixin clickyButton($duration : 0.3s, $height: 10px, $height--hover: 7px, $height--active: 3px, $shadow : true) {
-//USAGE: @include clickyButton(0.2s, 8px, 6px, 2px, false);
-	
+@mixin clickyButton($duration : 0.3s, $height: 10px, $height--hover: 7px, $height--active: 3px, $shadow : true, $color: #000, $color--hover: #999, $color--active: #CCC) {
+//USAGE: @include clickyButton(0.2s, 8px, 6px, 2px, false, );
+
 	$offset--hover : $height - $height--hover;
 	$offset--active : $height - $height--active;
 
@@ -12,24 +12,24 @@
 	transition: all $duration ease;
 
 	@if ($shadow == true) {
-		-webkit-box-shadow: 0px $height 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
-	    -moz-box-shadow: 0px $height 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
-	    box-shadow: 0px $height 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+		-webkit-box-shadow: 0px $height 0px $color, 0px 9px 25px rgba(0,0,0,.7);
+	    -moz-box-shadow: 0px $height 0px $color, 0px 9px 25px rgba(0,0,0,.7);
+	    box-shadow: 0px $height 0px $color, 0px 9px 25px rgba(0,0,0,.7);
 	} @else {
-		-webkit-box-shadow: 0px $height 0px rgba(219,31,5,1);
-	    -moz-box-shadow: 0px $height 0px rgba(219,31,5,1);
-	    box-shadow: 0px $height 0px rgba(219,31,5,1);
+		-webkit-box-shadow: 0px $height 0px $color;
+	    -moz-box-shadow: 0px $height 0px $color;
+	    box-shadow: 0px $height 0px $color;
 	}
 
 	&:hover {
 		@if ($shadow == true) {
-			-webkit-box-shadow: 0px $height--hover 0px rgba(219,31,5,1), 0px 6px 6px rgba(0,0,0,.9);
-		    -moz-box-shadow: 0px $height--hover 0px rgba(219,31,5,1), 0px 6px 6px rgba(0,0,0,.9);
-		    box-shadow: 0px $height--hover 0px rgba(219,31,5,1), 0px 6px 6px rgba(0,0,0,.9);
+			-webkit-box-shadow: 0px $height--hover 0px $color--hover, 0px 6px 6px rgba(0,0,0,.9);
+		    -moz-box-shadow: 0px $height--hover 0px $color--hover, 0px 6px 6px rgba(0,0,0,.9);
+		    box-shadow: 0px $height--hover 0px $color--hover, 0px 6px 6px rgba(0,0,0,.9);
 	    } @else {
-			-webkit-box-shadow: 0px $height--hover 0px rgba(219,31,5,1);
-		    -moz-box-shadow: 0px $height--hover 0px rgba(219,31,5,1);
-		    box-shadow: 0px $height--hover 0px rgba(219,31,5,1);
+			-webkit-box-shadow: 0px $height--hover 0px $color--hover;
+		    -moz-box-shadow: 0px $height--hover 0px $color--hover;
+		    box-shadow: 0px $height--hover 0px $color--hover;
 		}
 	    position: relative;
 	    top: $offset--hover;
@@ -37,13 +37,13 @@
 
 	&:active {
 		@if ($shadow == true) {
-    	-webkit-box-shadow: 0px $height--active 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
-	    -moz-box-shadow: 0px $height--active 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
-	    box-shadow: 0px $height--active 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    	-webkit-box-shadow: 0px $height--active 0px $color--active, 0px 3px 6px rgba(0,0,0,.9);
+	    -moz-box-shadow: 0px $height--active 0px $color--active, 0px 3px 6px rgba(0,0,0,.9);
+	    box-shadow: 0px $height--active 0px $color--active, 0px 3px 6px rgba(0,0,0,.9);
 		} @else {
-		-webkit-box-shadow: 0px $height--active 0px rgba(219,31,5,1);
-	    -moz-box-shadow: 0px $height--active 0px rgba(219,31,5,1);
-	    box-shadow: 0px $height--active 0px rgba(219,31,5,1);
+		-webkit-box-shadow: 0px $height--active 0px $color--active;
+	    -moz-box-shadow: 0px $height--active 0px $color--active;
+	    box-shadow: 0px $height--active 0px $color--active;
 		}	
 		
 	    position: relative;

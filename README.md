@@ -40,4 +40,4 @@ A big thanks to the hard work of all the people who have created the following s
 - normalize.css : 			https://github.com/necolas/normalize.css
 - Reset : 					http://meyerweb.com/eric/tools/css/reset/
 - rem mixin :					unknown - source needed
-- bulletproof clearfix :	 	https://github.com/adamstac/grid-coordinates/blob/master/stylesheets/modules/_bulletproof-clearfix.sass
+- Micro clearfix hack :	 	http://nicolasgallagher.com/micro-clearfix-hack/

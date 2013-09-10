@@ -1,23 +1,23 @@
 // ==== USEFUL SASS MIXINS for easy project use ====
 
 
-@mixin bulletproof-clearfix {
-  // Creates a clearfix style
-  // Usage: @inclue bulletproof-clearfix;
-  zoom: 1;
-  &:before, &:after {
-    content: ".";
-    display: block;
-    overflow: hidden;
-    visibility: hidden;
-    font-size: 0;
-    line-height: 0;
-    width: 0;
-    height: 0;
-  }
-  &:after {
-    clear: both;
-  }
+// Clears floated elements using the Micro cleafix hack
+// Usage: @include clearfix;
+@mixin clearfix {
+
+	&:before, &:after {
+		content: " ";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+
+	& {
+		*zoom: 1;
+	}
+
 }
 
 
@@ -69,7 +69,7 @@
 @mixin basicPositioningClasses() {
     // Quick setup for some common positioning classes 
     // Usage: @include basicPositioningClasses;
-    .cf { @include bulletproof-clearfix; };
+    .cf { @include clearfix; };
     .left { float: left; }
     .right { float: right; }
 
